@@ -4,7 +4,9 @@ var Bob = function(){
   this.hey = function(conversationStarter){
     var response;
 
-    if(conversationStarter === conversationStarter.toUpperCase()){
+    if(!conversationStarter || conversationStarter.match(/^\s+$/)){
+      response = "Fine. Be that way!";
+    } else if(conversationStarter === conversationStarter.toUpperCase()){
       response = 'Woah, chill out!';
     } else if(conversationStarter.charAt(conversationStarter.length-1) === '?'){
       response = 'Sure.';
@@ -14,7 +16,7 @@ var Bob = function(){
 
     return response;
     
-  }; 
+  };
 
 
 
