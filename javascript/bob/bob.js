@@ -21,19 +21,19 @@ var ConversationStarter = function(input){
 
   this.isSayingNothing = function(){
 
-    if(!input || input.match(/^\s+$/)) { return true; }
+    return !input || input.trim() === "";
 
   };
 
   this.isShouting = function(){
 
-    if(input === input.toUpperCase()) { return true; }
+    return input === input.toUpperCase();
 
   };
 
   this.isAskingQuestion = function(){
 
-    if(input.charAt(input.length-1) === '?') { return true; }
+    return input.charAt(input.length-1) === '?';
 
   };
 
